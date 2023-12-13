@@ -1,7 +1,7 @@
 import docker
 
 
-class DockerDomunicator:
+class DockerComunicator:
     def __init__(self):
         self.docker_client = docker.from_env()
 

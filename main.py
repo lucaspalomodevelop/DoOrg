@@ -1,13 +1,13 @@
 #!/bin/python3
 
 import os
-import DockerDomunicator as DockerDomunicator
+import DockerComunicator as DockerComunicator
 
 
 VERSION = "0.0.1"
 call_dir = ""
 
-DockerDomunicator = DockerDomunicator.DockerDomunicator()
+DockerComunicator = DockerComunicator.DockerComunicator()
 
 
 class style:
@@ -67,11 +67,11 @@ if __name__ == "__main__":
     print("Services:")
     for service in services:
         color = (
-            style.GREEN if DockerDomunicator.is_service_running(service) else style.RED
+            style.GREEN if DockerComunicator.is_service_running(service) else style.RED
         )
         print(color + " - " + service + style.RESET)
 
     print("Docker services:")
-    docker_services = DockerDomunicator.get_services()
+    docker_services = DockerComunicator.get_services()
     for service in docker_services:
         print(" - " + service.name)
