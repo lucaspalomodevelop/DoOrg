@@ -17,3 +17,11 @@ class DockerComunicator:
             return service.status == "running"
         except docker.errors.NotFound:
             return False
+
+    def start_service(self, service_name: str):
+        service = self.get_service(service_name)
+        service.start()
+
+    def stop_service(self, service_name: str):
+        service = self.get_service(service_name)
+        service.stop()
